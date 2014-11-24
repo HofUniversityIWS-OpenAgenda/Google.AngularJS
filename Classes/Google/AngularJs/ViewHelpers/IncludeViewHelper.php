@@ -8,6 +8,19 @@ namespace Google\AngularJs\ViewHelpers;
 
 use TYPO3\Flow\Annotations as Flow;
 
+/**
+ * Class IncludeViewHelper
+ *
+ * Usage:
+ * + include only base AngularJS file
+ * 		<ng:include />
+ * + include minified version of base AngularJS file:
+ *		<ng:include min="1" />
+ * + include e.g. AngularJS *AND* routing provider *AND* animation provider:
+ *		<ng:include route="1" animate="1" />
+ *
+ * @package Google\AngularJs\ViewHelpers
+ */
 class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
