@@ -19,7 +19,7 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	/**
 	 * @var string
 	 */
-	protected $renderTemplate = '<link rel="stylesheet" href="%s" />';
+	protected $renderTemplate = '<script type="text/javascript" src="%s"></script>';
 
 	/**
 	 * @var string
