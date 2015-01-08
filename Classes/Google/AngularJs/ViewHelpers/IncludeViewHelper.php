@@ -15,15 +15,21 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * + include only base AngularJS file
  *
- *		`<ng:include />`
+ * <code>
+ * <ng:include />
+ * </code>
  *
  * + include minified version of base AngularJS file
  *
- *		`<ng:include min="1" />`
+ * <code>
+ * <ng:include min="1" />
+ * </code>
  *
  * + include e.g. AngularJS *AND* routing provider *AND* animation provider
  *
- *		`<ng:include route="1" animate="1" />`
+ * <code>
+ * <ng:include route="1" animate="1" />
+ * </code>
  *
  * @package Google\AngularJs\ViewHelpers
  * @author Oliver Hader <oliver@typo3.org>
