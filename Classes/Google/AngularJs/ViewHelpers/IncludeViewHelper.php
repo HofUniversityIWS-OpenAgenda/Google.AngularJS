@@ -11,30 +11,43 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * Class IncludeViewHelper
  *
- * Usage:
+ * **Usage**
+ *
  * + include only base AngularJS file
- * 		<ng:include />
- * + include minified version of base AngularJS file:
- *		<ng:include min="1" />
- * + include e.g. AngularJS *AND* routing provider *AND* animation provider:
- *		<ng:include route="1" animate="1" />
+ *
+ *		`<ng:include />`
+ *
+ * + include minified version of base AngularJS file
+ *
+ *		`<ng:include min="1" />`
+ *
+ * + include e.g. AngularJS *AND* routing provider *AND* animation provider
+ *
+ *		`<ng:include route="1" animate="1" />`
  *
  * @package Google\AngularJs\ViewHelpers
+ * @author Oliver Hader <oliver@typo3.org>
  */
 class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
+	 * The TYPO3 Flow resource publisher.
+	 *
 	 * @var \TYPO3\Flow\Resource\Publishing\ResourcePublisher
 	 * @Flow\Inject
 	 */
 	protected $resourcePublisher;
 
 	/**
+	 * The template to be used to render the HTML script tag.
+	 *
 	 * @var string
 	 */
 	protected $renderTemplate = '<script type="text/javascript" src="%s"></script>';
 
 	/**
+	 * The relative resource path inside the current TYPO3 Flow package.
+	 *
 	 * @var string
 	 */
 	protected $staticResourcePath = 'Packages/Google.AngularJs/Libraries/angular/';
@@ -58,7 +71,9 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	}
 
 	/**
-	 * @param NULL|bool $min
+	 * Renders the JavaScript resource inclusions as HTML script tags.
+	 *
+	 * @param NULL|bool $min Whether to use the minified version of resources
 	 * @return string
 	 */
 	public function render($min = NULL) {
@@ -79,8 +94,10 @@ class IncludeViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	}
 
 	/**
-	 * @param string $name
-	 * @param bool $min
+	 * Gets the published resource URI.
+	 *
+	 * @param string $name Name of the AngularJS component
+	 * @param bool $min Whether to use the minified version of the resource
 	 * @return string
 	 */
 	protected function getResourceUri($name, $min = FALSE) {
